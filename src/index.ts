@@ -1,4 +1,4 @@
-// Definizione delle interfacce
+// Definizione interfacce
 interface IMezzo {
   tipo: string;
   id: string;
@@ -20,7 +20,7 @@ interface ICitta {
   aggiungiMezzo(mezzo: IMezzo): void;
 }
 
-// Implementazione della classe Mezzo
+// Implementazione classe Mezzo
 class Mezzo implements IMezzo {
   tipo: string;
   id: string;
@@ -42,7 +42,7 @@ class Mezzo implements IMezzo {
   }
 }
 
-// Implementazione della classe Utente
+// Implementazione classe Utente
 class Utente implements IUtente {
   nome: string;
   cognome: string;
@@ -65,7 +65,7 @@ class Utente implements IUtente {
   }
 }
 
-// Implementazione della classe Citta
+// Implementazione classe Citta
 class Citta implements ICitta {
   nome: string;
   mezziDisponibili: IMezzo[];
@@ -81,24 +81,24 @@ class Citta implements ICitta {
   }
 }
 
-// Creazione di alcuni oggetti Mezzo
+// oggetti Mezzo
 const bici1 = new Mezzo('bici', 'B001');
 const scooter1 = new Mezzo('scooter', 'S001');
 const monopattino1 = new Mezzo('monopattino', 'M001');
 
-// Creazione di alcuni oggetti Utente
+// oggetti Utente
 const utente1 = new Utente('Mario', 'Rossi', 'mario.rossi@example.com', 'Carta di Credito');
 const utente2 = new Utente('Giulia', 'Verdi', 'giulia.verdi@example.com', 'PayPal');
 
-// Creazione di un'istanza della classe Citta
+//istanza classe Citta
 const milano = new Citta('Milano');
 
-// Aggiunta dei mezzi alla città
+// Aggiunta mezzi città
 milano.aggiungiMezzo(bici1);
 milano.aggiungiMezzo(scooter1);
 milano.aggiungiMezzo(monopattino1);
 
-// Test della logica di prenotazione
+// prenotazione
 utente1.prenotaMezzo(bici1);  // Mario prenota una bici
-utente2.prenotaMezzo(bici1);  // Giulia tenta di prenotare la stessa bici già in uso
+utente2.prenotaMezzo(bici1);  // Giulia prova a prenotare la stessa bici 
 utente2.prenotaMezzo(scooter1); // Giulia prenota uno scooter
